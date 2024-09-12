@@ -1,0 +1,45 @@
+minimum_cumulusci_version: '3.91.0'
+project:
+    name: metadeploy-test
+    package:
+        name: metadeploy-test
+        api_version: '61.0'
+    git:
+        prefix_release: release/
+        repo_url: https://github.com/wdci-dev/metadeploy-test
+    source_format: sfdx
+sources:
+    latest_release:
+        github: https://github.com/wdci-dev/metadeploy-test
+        release: latest
+tasks:
+    robot:
+        options:
+            suites: robot/metadeploy-test/tests
+            options:
+                outputdir: robot/metadeploy-test/results
+
+    robot_testdoc:
+        options:
+            path: robot/metadeploy-test/tests
+            output: robot/metadeploy-test/doc/metadeploy-test_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
+
+plans:
+    install:
+        slug: install
+        title: Test metadeploy
+        tier: primary
+        steps:
+            1: 
+            task: deploy_pre
+                options:
+                    unmanaged: True
+                ui_options:
+                    01_profile:
+                        name: Admin Profile
+                        is_required: False
+                        is_recommended: True
