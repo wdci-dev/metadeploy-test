@@ -1,0 +1,20 @@
+{
+    "product": {
+        "title": {
+            "message": "Metadeploy Test",
+            "description": "name of product"
+        }
+    },
+    "plan:install": {
+        "title": {
+            "message": "Test metadeploy",
+            "description": "title of installation plan"
+        }
+    },
+    "steps": {
+        "Admin Profile": {
+            "message": "Admin Profile",
+            "description": "title of installation step"
+        }
+    }
+}
