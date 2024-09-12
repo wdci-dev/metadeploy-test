@@ -7,7 +7,9 @@ project:
     git:
         prefix_release: release/
         repo_url: https://github.com/wdci-dev/metadeploy-test
+        default_branch: master
     source_format: sfdx
+
 sources:
     latest_release:
         github: https://github.com/wdci-dev/metadeploy-test
